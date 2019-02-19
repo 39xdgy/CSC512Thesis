@@ -2,9 +2,9 @@ import praw
 
 reddit = praw.Reddit(client_id = 'nvLZT3XnES_fbQ',
 client_secret = 'mvC2mW9qI_YDHsAW_vWXai8gMP0',  username = 'afcornell2021',
-    password = 'Fhegix!00', useragent = 'praw512')
+    password = 'Fhegix!00', user_agent = 'praw512')
 
-subreddit = Reddit.subreddit('popular')
+subreddit = reddit.subreddit('popular')
 
 hot_python = subreddit.hot(limit = 5)
 
