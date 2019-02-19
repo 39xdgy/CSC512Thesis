@@ -1,0 +1,95 @@
+Source: Hugo Larochelle's Neural Network Class
+
+Weights refer to the strength of connection between input neurons and output neurons.
+Bias refers to the "pre-activation" when there are no inputs available. 
+The activation function determines the range of the output; usually it is between (1,-1). 
+
+Types of Activation Functions:
+       Note: a refers to the pre-activation
+       1. Linear Activation Function: g(a) = a
+              - Not interesting. 
+       2. Sigmoid Activation Function: g(a) = sigm(a) = 1 / 1 + exp(-a)
+              - Has an upper bound of 1 and a lower bound of 0.
+              - Always positive and increasing.
+       3. Hyperbolic Tangent Activation Function: g(a) = tanh(a) = exp(2a)-1/exp(2a)+1
+              - Has an upper bound of 1 and a lower bound of -1.
+              - Can be positive or negative.
+              - Always increasing. 
+       4. Rectified Linear Activation Function: g(a) = reclin(a) = max(0,a)
+              - Has no upper bound; therefore, it is always non-negative.
+              - Has a lower bound of 0.
+              - Increases monotonically.
+
+Artificial neurons can perform binary classification.
+The sigmoid activation function can interpret the probability of "some input x belonging to class 1" p(y=1|x).
+The logistic regression classifier uses a cut-off value to determine whether or not an input belongs to class 1 or class 0.
+
+Universal Approximation Theorem (Homik, 1991):
+"A single hidden layer neural network with a linear output unit can approximate any continuous function arbitrarily well, 
+given enough hidden units."
+
+Biological Inspiration:
+Neurons receive information from other neurons through dentrites.
+Neurons communicate through an action potential.
+The firing rate describes whether a neuron is active or not.
+
+In artificial neural networks, the activation corresponds to the firing rate, the weights model whether or not
+they excite or inhibit one another, and the activation function and bias model the behavior of action potentials.
+
+Empirical Risk Minimization: Train a Neural Network into an Optimization Problem
+How to Train a Neural Network to Develop a Right Behavior in Order to Solve a Given Problem?
+       - Assume an input value for "X" and associated target "Y"
+
+Training Neural Networks: Model Selection
+Split Into Three Subsets:
+       1. Training Set (70%): trains a model
+       2. Validation Set (15%): selects hyper-parameters
+       3. Test Set (30%): estimates error
+Generalization refers to the model's behavior on unseen examples.
+Stop training when validation set error > training set error.
+
+Deep learning refers to "...learning models with multilayer representations."
+Each unit is a distinct feature.
+Application: speech recognition
+
+Boolean functions
+Boolean circuits have hidden units that are logic gates (and, or, or not).
+
+Why is it difficult to train neural networks?
+       1. Optimization (underfitting)
+       2. Overfitting
+
+Natural Language Processing: tasks involving language data
+Text data is highly dimensional. 
+
+Natural Language Preprocessing
+Tokenization: converting long strings to a list of token strings
+       E.g.: "The sky is blue." = "The" "sky" "is" "blue"
+In English, splitting tokens based on spaces and punctuation is good enough.
+Lemmatizing tokens means putting each token into a standard form.
+       E.g.: "7" -> "NUMBER"
+It is important to map lemmatized words to a unique ID.
+How to choose which words are part of the vocabulary: most frequent words, ignore uninformative words ("the")
+Words outside the vocabulary will be mapped to a special "out-of-vocabulary" ID.
+
+Encoding: converting a word into a vectorial form to feed into any machine learning algorithm
+One-hot vector: filled with 0s and a 1 which is associated with the ID
+       E.g. For vocabulary size = 12, the one-hot vector is 8
+              g(w) = [000000010000]
+       Disadvantages: very highly dimensional, vulnerable to overfitting, computationally expensive
+Continuous word representation: each word is associated with a real-valued vector
+       Word = "dog"
+       w = 6
+       C(w) = [0.59, 0.91, 0.09, 0.77, -0.64]
+
+A language model assigns probabilities to a sequence of words p(w1,...,wT).
+An n-gram is a sequence of n-words:
+       1. unigrams (n=1): "a"
+       2. bigrams (n=2): "a" "dog"
+       3. trigrams (n=3): "a" "happy" "dog"
+       
+
+
+
+
+
